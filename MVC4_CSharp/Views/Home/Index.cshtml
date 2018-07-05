@@ -1,0 +1,64 @@
+﻿
+@{
+    Random rnd = new Random();
+    int zufallszahl = rnd.Next();
+    Layout = null;
+}
+
+<html>
+    <head>
+        <title>Hallo welt - ASP.Net macht Spaß!</title>
+    </head>
+    
+    <body>
+
+        <h1>
+
+        @ViewData["greetings"] <br />
+
+        Diese Seite wurde @ViewData["counter"] mal aufgerufen
+
+        <br /> <br />
+
+            Name: @ViewBag.data.Name <br />
+            Alter: @ViewBag.data.Alter <br />
+            E-Mail: @ViewBag.data.EMail <br />
+
+
+
+         </h1> <br />
+
+        @* Das ist ein Kommentar *@
+
+        @{ 
+            @:Ausgabe eines @@ <hr />
+            @:E-Mail-Adresse: nraseru@googlemail.com
+        }
+
+        @Html.ActionLink("Seite 2", "Seite2", "Home") <br />
+
+        @Html.ActionLink("Seite 3", "Seite3", "Home") <br />
+
+        Die Variable ist @zufallszahl
+        <br />
+
+        @{ 
+            zufallszahl = rnd.Next();
+            @zufallszahl
+            @:<hr />
+            zufallszahl = rnd.Next();
+        }
+
+        <text>@zufallszahl <hr /></text>
+
+        @{ 
+            @:Das kann innerhalb eines Blocks sein:
+            zufallszahl = rnd.Next();
+            <text>@zufallszahl <hr /> </text>
+        }
+
+    </body>
+
+</html>
+
+
